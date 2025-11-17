@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>ابطال الواجبات - واجبات BTEC موثوقة ومضمونة</title>
+  <title>ابطال الواجبات - واجبات BTEC احترافية ومضمونة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="مساعدة احترافية في واجبات BTEC بتسليم في الوقت، جودة عالية، وسرّية تامة." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,8 +36,11 @@
 
     body {
       font-family: 'Tajawal', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      /* خلفية أدكن مع وهج أصفر/برتقالي قريب من ألوان اللوغو */
       background:
-        radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+        radial-gradient(circle at 10% 0%, rgba(250, 204, 21, 0.18), transparent 55%),
+        radial-gradient(circle at 85% 0%, rgba(249, 115, 22, 0.16), transparent 55%),
+        radial-gradient(circle at 50% 100%, rgba(15, 23, 42, 0.9), #020617 55%, #000 100%);
       color: var(--text);
       line-height: 1.7;
     }
@@ -66,7 +69,6 @@
       padding: 1.25rem 1.25rem 4rem;
     }
 
-    /* فقاعة خلفية */
     .glow {
       position: fixed;
       inset: 0;
@@ -76,7 +78,7 @@
         radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.18), transparent 55%),
         radial-gradient(circle at 90% 10%, rgba(250, 204, 21, 0.16), transparent 55%),
         radial-gradient(circle at 50% 100%, rgba(129, 140, 248, 0.18), transparent 60%);
-      opacity: 0.9;
+      opacity: 0.7;
     }
 
     /* الهيدر */
@@ -118,6 +120,7 @@
       color: #0f172a;
       box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
       font-size: 1.05rem;
+      overflow: hidden;
     }
 
     .brand-text {
@@ -129,6 +132,7 @@
     .brand-main {
       font-weight: 700;
       font-size: 1.05rem;
+      text-transform: lowercase;
     }
 
     .brand-sub {
@@ -171,7 +175,6 @@
       font-size: 1.1rem;
     }
 
-    /* زر موبايل */
     .nav-toggle {
       display: none;
       width: 32px;
@@ -241,7 +244,6 @@
       display: flex;
     }
 
-    /* الأقسام العامة */
     main {
       flex: 1;
     }
@@ -275,12 +277,12 @@
       max-width: 34rem;
     }
 
-    /* البطل (Hero) */
+    /* البطل */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 2rem;
-      align-items: center;
+      align-items: flex-start;
       margin-top: 2rem;
     }
 
@@ -389,6 +391,7 @@
       flex-wrap: wrap;
       gap: 1.4rem;
       font-size: 0.85rem;
+      margin-top: 1.4rem;
     }
 
     .hero-meta-item {
@@ -435,6 +438,7 @@
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
+      margin-top: 2.1rem;
     }
 
     .hero-card-list {
@@ -531,7 +535,6 @@
       margin-top: 0.1rem;
     }
 
-    /* خطوات */
     .steps {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -571,7 +574,6 @@
       color: var(--muted);
     }
 
-    /* تقييمات */
     .testimonials {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -605,7 +607,6 @@
       color: var(--muted);
     }
 
-    /* FAQ */
     .faq {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -629,10 +630,9 @@
       color: var(--muted);
     }
 
-    /* نموذج التواصل */
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 1.2rem;
       align-items: stretch;
     }
@@ -692,6 +692,7 @@
       margin-top: 0.4rem;
       font-size: 0.78rem;
       color: var(--muted);
+      line-height: 1.8;
     }
 
     .contact-highlight {
@@ -707,7 +708,6 @@
       color: var(--accent);
     }
 
-    /* الفوتر */
     footer {
       border-top: 1px solid rgba(148, 163, 184, 0.3);
       margin-top: 3rem;
@@ -738,7 +738,6 @@
       color: var(--muted);
     }
 
-    /* زر واتساب عائم */
     .whatsapp-float {
       position: fixed;
       bottom: 1.3rem;
@@ -773,7 +772,6 @@
       white-space: nowrap;
     }
 
-    /* استجابة */
     @media (max-width: 960px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
@@ -788,9 +786,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .faq {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .contact-grid {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -838,12 +833,14 @@
   <header>
     <div class="nav-bar">
       <a href="#top" class="brand">
-       <div class="brand-logo">
-    <img src="WhatsApp Image 2025-10-29 at 21.35.45_86a49c60.jpg" alt="Homework Hero Logo" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;" />
-  </div>
+        <div class="brand-logo">
+          <img src="WhatsApp Image 2025-10-29 at 21.35.45_86a49c60.jpg"
+               alt="Homework Hero Logo"
+               style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
+        </div>
         <div class="brand-text">
           <div class="brand-main">homework hero</div>
-          <div class="brand-sub">ابطال الواجبات (ENG.BTEC) </div>
+          <div class="brand-sub">ابطال الواجبات (ENG.BTEC)</div>
         </div>
       </a>
 
@@ -894,7 +891,7 @@
           </h1>
           <p class="hero-text">
             نقدّم مساعدة احترافية في واجبات BTEC: شرح، تنظيم، تنسيق، ومحتوى
-            مضبوط على المعايير، مع الحفاظ على أسلوبك الشخصي وسرّيتك التامة.
+            حل على المعايير، مع الحفاظ على ان يكون نفس أسلوبك الشخصي  وبخصوصية عالية.
           </p>
 
           <div class="hero-badges">
@@ -922,70 +919,65 @@
               مشاهدة الخدمات بالتفصيل
             </a>
           </div>
-    <div class="contact-grid">
-         <h3 class="card-title">نموذج الطلب السريع</h3>
-<form class="contact-form">
-  <div class="field">
-    <label for="name">الاسم الأول</label>
-    <input id="name" type="text" placeholder="مثال: محمد" />
-  </div>
 
-  <div class="field">
-    <label for="unit">اسم الوحدة / رقم الوحدة</label>
-    <input id="unit" type="text" placeholder="مثال: Unit 3 - Delivery of Engineering Processes" />
-  </div>
+          <!-- بطاقة نموذج الطلب السريع + النص الذي طلبته -->
+          <div class="contact-card">
+            <h3 class="card-title">نموذج الطلب السريع</h3>
+            <form class="contact-form">
+              <div class="field">
+                <label for="name">الاسم الأول</label>
+                <input id="name" type="text" placeholder="مثال: محمد" />
+              </div>
 
-  <div class="field">
-    <label for="deadline">موعد التسليم</label>
-    <input id="deadline" type="date" />
-  </div>
+              <div class="field">
+                <label for="unit">اسم الوحدة / رقم الوحدة</label>
+                <input id="unit" type="text" placeholder="مثال: Unit 3 - Delivery of Engineering Processes" />
+              </div>
 
-  <div class="field">
-    <label for="type">نوع المطلوب</label>
-    <select id="type">
-      <option>تقرير Word</option>
-      <option>عرض PowerPoint</option>
-      <option>تقرير + PowerPoint</option>
-      <option>تقرير + PowerPoint</option>
-      <option>تعديل واجب موجود</option>
-    </select>
-  </div>
+              <div class="field">
+                <label for="deadline">موعد التسليم</label>
+                <input id="deadline" type="date" />
+              </div>
 
-  <div class="field">
-    <label for="brief">إرفاق ملف البريف / التعليمات</label>
-    <input id="brief" type="file" multiple />
-    <small style="font-size:0.72rem; color:#9ca3af;">
-      الملفات لا تُرسل من هنا تلقائيًا، بل ترفقها يدويًا في واتساب بعد فتح المحادثة.
-    </small>
-  </div>
+              <div class="field">
+                <label for="type">نوع المطلوب</label>
+                <select id="type">
+                  <option>تقرير Word</option>
+                  <option>عرض PowerPoint</option>
+                  <option>تقرير + PowerPoint</option>
+                  <option>تعديل واجب موجود</option>
+                </select>
+              </div>
 
-  <div class="field">
-    <label for="details">شرح مختصر عن المطلوب</label>
-    <textarea id="details" placeholder="مثال: مطلوب P1 و P2 و P3 مع جداول وصور حسب البريف."></textarea>
-  </div>
+              <!-- نص جاهز تبدأ + شرح مختصر + زر إرسال + ملاحظة واتساب -->
+              <div class="field">
+                <label for="details">شرح مختصر عن المطلوب</label>
+                <textarea id="details" placeholder="مثال: مطلوب P1 و P2 و P3 مع جداول وصور حسب البريف."></textarea>
+              </div>
 
-  <button type="button" id="whatsapp-submit" class="btn-primary" style="margin-top:0.2rem;">
-    إرسال عبر واتساب
-  </button>
+              <button type="button" id="whatsapp-submit" class="btn-primary" style="margin-top:0.2rem;">
+                إرسال (تجريبي)
+              </button>
 
-  <div class="contact-note">
-    جاهز تبدأ؟ أرسل تفاصيل واجبك الآن.<br />
-    املأ النموذج السريع أو تواصل مباشرة عبر واتساب، وسنرد عليك بأقرب وقت مع
-    توضيح الوقت والتكلفة.<br /><br />
-    هذا النموذج جاهز لحجز واجباتكم. يرجى تعبئة المعلومات ثم المتابعة على الواتساب
-    لاستلام الحل والاتفاق على الموعد.<br />
-    وسيلة التواصل المعتمدة هي <strong>واتساب</strong>.<br />
-    اضغط على زر واتساب أسفل الشاشة، وتأكد أنك أرسلت:
-    <br />
-    1) صورة البريف كاملة.<br />
-    2) موعد التسليم المطلوب.<br />
-    3) هل تحتاج تقرير فقط أم عرض أيضًا؟<br />
-    سنرد عليك برسالة منظمة تتضمن: فهمنا للمطلوب، الوقت، والتكلفة التقريبية،
-    ثم نبدأ بعد موافقتك.
-  </div>
-</form>
+              <div class="contact-note">
+                جاهز تبدأ؟ أرسل تفاصيل واجبك الآن.<br />
+                املأ النموذج السريع أو تواصل مباشرة عبر واتساب، وسنرد عليك بأقرب وقت
+                مع توضيح الوقت والتكلفة.<br /><br />
+                هذا النموذج جاهز لحجز واجباتكم. يرجى تعبئة المعلومات والمتابعة على الواتس اب
+                لاستلام الحل والاتفاق على الموعد.<br /><br />
+                نفضل دائماً واتساب للمراسلة .<br />
+                اضغط على زر واتساب أسفل الشاشة، وتأكد أنك أرسلت:
+                <br />
+                1) صورة البريف كاملة.<br />
+                2) موعد التسليم المطلوب.<br />
+                3) هل تحتاج تقرير فقط أم عرض أيضًا؟<br />
+                سنرد عليك برسالة منظمة تتضمن: فهمنا للمطلوب، الوقت، والتكلفة التقريبية،
+                ثم نبدأ بعد موافقتك.
+              </div>
+            </form>
+          </div>
 
-              
+          <!-- الأرقام تحت النموذج كما طلبت -->
           <div class="hero-meta">
             <div class="hero-meta-item">
               <div class="hero-meta-label">طلاب تم خدمتهم</div>
@@ -1036,11 +1028,11 @@
       <!-- لماذا نحن -->
       <section id="why-us">
         <div class="section-header">
-          <div class="section-kicker">لماذا تختار ابطال الواجبات؟</div>
+          <div class="section-kicker">لماذا تختار homework hero ؟</div>
           <h2 class="section-title">تركيز على تحقييق معايير العلامة الكاملة، وليس مجرد الحشو.</h2>
           <p class="section-subtitle">
             الفكرة ليست أن نكتب كلامًا كثيرًا فقط، بل أن نغطّي كل نقطة في البريف
-            بأسلوب منظم، واضح، ومقنع ، مع مراعاة أمثلة، جداول، ورسومات عندما تكون مطلوبة.
+            بأسلوب منظم، واضح، ومقنع، مع مراعاة أمثلة، جداول، ورسومات عندما تكون مطلوبة.
           </p>
         </div>
 
@@ -1063,7 +1055,7 @@
             <div class="card-label">02</div>
             <h3 class="card-title">أسلوب بشري وطبيعي</h3>
             <p class="card-text">
-         الحل بلغة طالب مجتهد بأسلوب واقعي
+              الحل بلغة طالب مجتهد بأسلوب واقعي
               يتناسب مع مستوى المرحلة.
             </p>
             <ul class="card-list">
@@ -1192,7 +1184,7 @@
             <div class="testimonials">
               <div class="testimonial">
                 <div class="testimonial-stars">★★★★★</div>
-                “المعلّم كتب لي بالتعليق: واضح إنك فاهم  ومغطي كل النقاط.”
+                “المعلّم كتب لي بالتعليق: واضح إنك فاهم ومغطي كل النقاط.”
                 <div class="testimonial-name">طالب هندسة - Level 3</div>
                 <div class="testimonial-tag">Unit 27</div>
               </div>
@@ -1204,7 +1196,7 @@
               </div>
               <div class="testimonial">
                 <div class="testimonial-stars">★★★★☆</div>
-                “كان عندي تأخير وانضغطت بالمهمة ، عدّلوا التقرير بناءً على الملاحظات بدون زيادة تكلفة.”
+                “كان عندي تأخير وانضغطت بالمهمة، عدّلوا التقرير بناءً على الملاحظات بدون زيادة تكلفة.”
                 <div class="testimonial-name">طالب زراعة - Level 3</div>
                 <div class="testimonial-tag">Unit 8</div>
               </div>
@@ -1225,24 +1217,24 @@
             <div class="faq-q">هل تضمنون علامة معيّنة؟</div>
             <div class="faq-a">
               لا يمكن لأحد أن يضمن علامة محددة، لأن التقييم النهائي يرجع للمعلّم
-              وسياسة المدرسة، لكن نضمن أن الحل مرتب ومبني على البريف قدر الإمكان،
-              ونقدّم تعديلات إذا طُلبت ملاحظات واضحة.
+    لكن نضمن أن الحل مرتب ومبني على البريف قدر الإمكان , انما نحن
+            نقدّم تعديلات مجانية وبعدد مفتوح عندما يطلبها المدرس
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-q">هل تُستخدم نفس الملفات لطلاب آخرين؟</div>
             <div class="faq-a">
-              لا، كل تقرير يُبنى لحالة الطالب والبريف الخاص به، ولا نشارك
-              ملفاتك مع أحد، حفاظًا على السرّية ومنع التشابه.
+              لا، كل تقرير يحل لكل طالب لحاله حسب البريف الخاص به، ولا نشارك
+              ملفاتك مع أحد، حفاظًا على الخصوصية ومنع التشابه.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-q">كيف يتم الدفع؟</div>
             <div class="faq-a">
-              يتم الاتفاق على طريقة الدفع حسب البلد والخيارات المتاحة (تحويل
-              بنكي، محفظة إلكترونية،…)، ويتم توضيح كل شيء بوضوح في واتساب قبل البدء.
+              يتم الاتفاق على طريقة الدفع حسب الخيارات المتاحة (تحويل
+              بنكي، محفظة إلكترونية، كليك )، ويتم توضيح كل شيء بوضوح في واتساب قبل البدء.
             </div>
           </div>
 
@@ -1262,41 +1254,12 @@
           <div class="section-kicker">جاهز تبدأ؟</div>
           <h2 class="section-title">أرسل تفاصيل واجبك الآن.</h2>
           <p class="section-subtitle">
-            املأ النموذج السريع أو تواصل مباشرة عبر واتساب، وسنرد عليك بأقرب وقت
+            املأ النموذج السريع في أعلى الصفحة أو تواصل مباشرة عبر واتساب، وسنرد عليك بأقرب وقت
             مع توضيح الوقت والتكلفة.
           </p>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-              <div class="field">
-                <label for="details">شرح مختصر عن المطلوب</label>
-                <textarea id="details" placeholder="مثال: مطلوب P1 و P2 و P3 مع جداول وصور حسب البريف."></textarea>
-              </div>
-              <button type="button" class="btn-primary" style="margin-top:0.2rem;">
-                إرسال (تجريبي)
-              </button>
-              <div class="contact-note">
-                هذا النموذج جاهز لحجز واجباتكم . يرجى تعبئة المعلومات والمتابعة على الواتس اب لاسترام الحل والاتفاق على الموعد
-              </div>
-            </form>
-          </div>
-
+        <div class="contact-grid">
           <div class="contact-highlight">
             <p>
               <strong>تفضّل دائماً واتساب للمراسلة الفعلية.</strong><br />
@@ -1393,6 +1356,3 @@
 </script>
 </body>
 </html>
-
-
-
