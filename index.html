@@ -923,30 +923,68 @@
             </a>
           </div>
     <div class="contact-grid">
-          <div class="contact-card">
-            <h3 class="card-title">نموذج الطلب السريع</h3>
-            <form class="contact-form">
-              <div class="field">
-                <label for="name">الاسم الأول</label>
-                <input id="name" type="text" placeholder="مثال: محمد" />
-              </div>
-              <div class="field">
-                <label for="unit">اسم الوحدة / رقم الوحدة</label>
-                <input id="unit" type="text" placeholder="مثال: Unit 3 - Delivery of Engineering Processes" />
-              </div>
-              <div class="field">
-                <label for="deadline">موعد التسليم</label>
-                <input id="deadline" type="date" />
-              </div>
-              <div class="field">
-                <label for="type">نوع المطلوب</label>
-                <select id="type">
-                  <option>تقرير Word</option>
-                  <option>عرض PowerPoint</option>
-                  <option>تقرير + PowerPoint</option>
-                  <option>تعديل واجب موجود</option>
-                </select>
-              </div>
+         <h3 class="card-title">نموذج الطلب السريع</h3>
+<form class="contact-form">
+  <div class="field">
+    <label for="name">الاسم الأول</label>
+    <input id="name" type="text" placeholder="مثال: محمد" />
+  </div>
+
+  <div class="field">
+    <label for="unit">اسم الوحدة / رقم الوحدة</label>
+    <input id="unit" type="text" placeholder="مثال: Unit 3 - Delivery of Engineering Processes" />
+  </div>
+
+  <div class="field">
+    <label for="deadline">موعد التسليم</label>
+    <input id="deadline" type="date" />
+  </div>
+
+  <div class="field">
+    <label for="type">نوع المطلوب</label>
+    <select id="type">
+      <option>تقرير Word</option>
+      <option>عرض PowerPoint</option>
+      <option>تقرير + PowerPoint</option>
+      <option>تقرير + PowerPoint</option>
+      <option>تعديل واجب موجود</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="brief">إرفاق ملف البريف / التعليمات</label>
+    <input id="brief" type="file" multiple />
+    <small style="font-size:0.72rem; color:#9ca3af;">
+      الملفات لا تُرسل من هنا تلقائيًا، بل ترفقها يدويًا في واتساب بعد فتح المحادثة.
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="details">شرح مختصر عن المطلوب</label>
+    <textarea id="details" placeholder="مثال: مطلوب P1 و P2 و P3 مع جداول وصور حسب البريف."></textarea>
+  </div>
+
+  <button type="button" id="whatsapp-submit" class="btn-primary" style="margin-top:0.2rem;">
+    إرسال عبر واتساب
+  </button>
+
+  <div class="contact-note">
+    جاهز تبدأ؟ أرسل تفاصيل واجبك الآن.<br />
+    املأ النموذج السريع أو تواصل مباشرة عبر واتساب، وسنرد عليك بأقرب وقت مع
+    توضيح الوقت والتكلفة.<br /><br />
+    هذا النموذج جاهز لحجز واجباتكم. يرجى تعبئة المعلومات ثم المتابعة على الواتساب
+    لاستلام الحل والاتفاق على الموعد.<br />
+    وسيلة التواصل المعتمدة هي <strong>واتساب</strong>.<br />
+    اضغط على زر واتساب أسفل الشاشة، وتأكد أنك أرسلت:
+    <br />
+    1) صورة البريف كاملة.<br />
+    2) موعد التسليم المطلوب.<br />
+    3) هل تحتاج تقرير فقط أم عرض أيضًا؟<br />
+    سنرد عليك برسالة منظمة تتضمن: فهمنا للمطلوب، الوقت، والتكلفة التقريبية،
+    ثم نبدأ بعد موافقتك.
+  </div>
+</form>
+
               
           <div class="hero-meta">
             <div class="hero-meta-item">
@@ -1326,7 +1364,35 @@
       });
     });
   }
+
+  // إرسال بيانات النموذج إلى واتساب كنص جاهز
+  const whatsappBtn = document.getElementById('whatsapp-submit');
+
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', () => {
+      const name = document.getElementById('name')?.value.trim() || '';
+      const unit = document.getElementById('unit')?.value.trim() || '';
+      const deadline = document.getElementById('deadline')?.value || '';
+      const type = document.getElementById('type')?.value || '';
+      const details = document.getElementById('details')?.value.trim() || '';
+
+      let text = 'جاهز تبدأ؟ أرسل تفاصيل واجبك الآن.\n\n';
+      text += 'الاسم: ' + (name || 'لم يُذكر') + '\n';
+      text += 'الوحدة / رقم الوحدة: ' + (unit || 'لم تُذكر') + '\n';
+      text += 'موعد التسليم: ' + (deadline || 'لم يُذكر') + '\n';
+      text += 'نوع المطلوب: ' + (type || 'لم يُذكر') + '\n\n';
+      text += 'شرح مختصر عن المطلوب:\n' + (details || '—') + '\n\n';
+      text += 'سأقوم الآن بإرفاق صورة البريف / الملفات من داخل واتساب.';
+
+      const phone = '962797376737';
+      const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
+
+      window.open(url, '_blank');
+    });
+  }
 </script>
 </body>
 </html>
+
+
 
