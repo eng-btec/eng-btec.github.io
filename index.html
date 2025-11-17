@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>ابطال الواجبات - واجبات BTEC موثوقة ومضمونة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="مساعدة احترافية في واجبات BTEC بتسليم في الوقت، جودة عالية، وسرّية تامة." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #050816;
+      --card: #0b1220;
+      --accent: #facc15;
+      --accent-soft: rgba(250, 204, 21, 0.12);
+      --accent-2: #38bdf8;
+      --danger: #f97373;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --radius-xl: 1.5rem;
+      --shadow-soft: 0 20px 45px rgba(15, 23, 42, 0.85);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Tajawal', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 4rem;
+    }
+
+    /* فقاعة خلفية */
+    .glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at 90% 10%, rgba(250, 204, 21, 0.16), transparent 55%),
+        radial-gradient(circle at 50% 100%, rgba(129, 140, 248, 0.18), transparent 60%);
+      opacity: 0.9;
+    }
+
+    /* الهيدر */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.7));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav-bar {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 1.25rem;
+      background: radial-gradient(circle at 30% 10%, #facc15, #f97316, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #0f172a;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+      font-size: 1.05rem;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-main {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #f97316);
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 10px 25px rgba(250, 204, 21, 0.45);
+      white-space: nowrap;
+    }
+
+    .nav-cta span {
+      font-size: 1.1rem;
+    }
+
+    /* زر موبايل */
+    .nav-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 4px;
+      background: var(--text);
+      position: relative;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .nav-toggle span::before {
+      position: absolute;
+      top: -5px;
+      right: 0;
+    }
+
+    .nav-toggle span::after {
+      position: absolute;
+      top: 5px;
+      right: 0;
+    }
+
+    .nav-toggle.active span {
+      transform: rotate(45deg);
+    }
+
+    .nav-toggle.active span::before {
+      transform: rotate(-90deg) translateX(0);
+      top: 0;
+    }
+
+    .nav-toggle.active span::after {
+      opacity: 0;
+    }
+
+    .nav-links-desktop {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .nav-links-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.75rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .nav-links-mobile.open {
+      display: flex;
+    }
+
+    /* الأقسام العامة */
+    main {
+      flex: 1;
+    }
+
+    section {
+      margin-top: 2.75rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0.3rem;
+    }
+
+    .section-subtitle {
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    /* البطل (Hero) */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .hero-main-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-main-kicker strong {
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #facc15, #f97316, #38bdf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-badge {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--muted);
+    }
+
+    .hero-badge strong {
+      color: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #f97316);
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 14px 30px rgba(250, 204, 21, 0.5);
+    }
+
+    .btn-primary span {
+      font-size: 1.1rem;
+    }
+
+    .btn-ghost {
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      font-size: 0.85rem;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .hero-meta-label {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .hero-meta-value {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 55%),
+                  radial-gradient(circle at 100% 100%, rgba(250, 204, 21, 0.22), transparent 55%),
+                  var(--card);
+      padding: 1.3rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+    }
+
+    .hero-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-list li span {
+      font-size: 1rem;
+      color: var(--accent-2);
+      margin-top: 0.05rem;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    .hero-chip {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+    }
+
+    /* كروت عامة */
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .cards-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.1rem 1.1rem 1.2rem;
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.75);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      color: var(--accent-2);
+      margin-bottom: 0.2rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-text {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .card-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .card-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-list li span {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-top: 0.1rem;
+    }
+
+    /* خطوات */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .step {
+      border-radius: 1.25rem;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+      padding: 0.9rem 0.95rem;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .step-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* تقييمات */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonial {
+      border-radius: 1.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.9rem 0.95rem;
+      background: rgba(15, 23, 42, 0.88);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .testimonial-stars {
+      color: #facc15;
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .testimonial-name {
+      margin-top: 0.45rem;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .testimonial-tag {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .faq-item {
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.8rem 0.9rem;
+      background: rgba(15, 23, 42, 0.92);
+      font-size: 0.85rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-a {
+      color: var(--muted);
+    }
+
+    /* نموذج التواصل */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-xl);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.1rem 1.1rem 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-top: 0.5rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.82rem;
+    }
+
+    .field label {
+      color: var(--muted);
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.95);
+      padding: 0.55rem 0.8rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--text);
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5);
+    }
+
+    .contact-note {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .contact-highlight {
+      border-radius: 1.1rem;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.9rem 0.9rem 0.9rem;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .contact-highlight strong {
+      color: var(--accent);
+    }
+
+    /* الفوتر */
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      margin-top: 3rem;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: rgba(2, 6, 23, 0.98);
+    }
+
+    .footer-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    /* زر واتساب عائم */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.3rem;
+      left: 1.3rem;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      background: #22c55e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 35px rgba(21, 128, 61, 0.75);
+      z-index: 50;
+    }
+
+    .whatsapp-float svg {
+      width: 27px;
+      height: 27px;
+      fill: #f9fafb;
+    }
+
+    .whatsapp-tooltip {
+      position: fixed;
+      bottom: 4.6rem;
+      left: 1.3rem;
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 0.96);
+      color: var(--text);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      white-space: nowrap;
+    }
+
+    /* استجابة */
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .cards-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .testimonials {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .faq {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        padding-inline: 1rem;
+      }
+      .cards-grid-3,
+      .testimonials,
+      .steps,
+      .cards-grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        margin-top: 1.5rem;
+      }
+      nav {
+        display: none;
+      }
+      .nav-toggle {
+        display: inline-flex;
+      }
+      .nav-links-desktop {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .whatsapp-tooltip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="page">
+
+  <!-- الهيدر -->
+  <header>
+    <div class="nav-bar">
+      <a href="#top" class="brand">
+        <div class="brand-logo">B</div>
+        <div class="brand-text">
+          <div class="brand-main">ابطال الواجبات</div>
+          <div class="brand-sub">homework hero </div>
+        </div>
+      </a>
+
+      <nav>
+        <div class="nav-links-desktop">
+          <a href="#why-us" class="nav-link">لماذا نحن؟</a>
+          <a href="#services" class="nav-link">الخدمات</a>
+          <a href="#process" class="nav-link">آلية العمل</a>
+          <a href="#faq" class="nav-link">الأسئلة الشائعة</a>
+          <a href="#contact" class="nav-cta">
+            تواصل الآن
+            <span>➜</span>
+          </a>
+        </div>
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-label="القائمة" data-menu-btn>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-links-mobile" data-nav>
+      <a href="#why-us" class="nav-link">لماذا نحن؟</a>
+      <a href="#services" class="nav-link">الخدمات</a>
+      <a href="#process" class="nav-link">آلية العمل</a>
+      <a href="#faq" class="nav-link">الأسئلة الشائعة</a>
+      <a href="#contact" class="nav-cta" style="margin-top:0.3rem;align-self:flex-start;">
+        تواصل الآن
+        <span>➜</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- المحتوى -->
+  <main id="top">
+    <div class="shell">
+
+      <!-- سكشن البطل -->
+      <section class="hero" aria-label="خدمة واجبات BTEC">
+        <div>
+          <div class="hero-main-kicker">
+            <span>🔥</span>
+            <span>دعم كامل لواجبات BTEC - منظم، واضح، وضمن المعايير.</span>
+            <strong>بدون نسخ مباشر.</strong>
+          </div>
+          <h1 class="hero-title">
+            خلّص واجبات <span>BTEC</span> بأعلى جودة،
+            بدون توتر وبدون ضياع وقت.
+          </h1>
+          <p class="hero-text">
+            نقدّم مساعدة احترافية في واجبات BTEC: شرح، تنظيم، تنسيق، ومحتوى
+            مضبوط على المعايير، مع الحفاظ على أسلوبك الشخصي وسرّيتك التامة.
+          </p>
+
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <strong>100٪</strong>
+              التزام بمعايير BTEC
+            </div>
+            <div class="hero-badge">
+              <strong>تعديلات مجانية</strong>
+              حتى يرضى المعلّم
+            </div>
+            <div class="hero-badge">
+              تسليم في الوقت ⏱️
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/962797376737?text=مرحبًا، أود المساعدة في واجبات BTEC."
+               target="_blank" rel="noopener"
+               class="btn-primary">
+              تواصل واتساب الآن
+              <span>💬</span>
+            </a>
+            <a href="#services" class="btn-ghost">
+              مشاهدة الخدمات بالتفصيل
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">طلاب تم خدمتهم</div>
+              <div class="hero-meta-value">+50 طالب</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">مهام وأنشطة مكتملة</div>
+              <div class="hero-meta-value">+200 واجب</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">نسبة الرضا</div>
+              <div class="hero-meta-value">%90 تقييم إيجابي</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-tag">نموذج تسليم منظم</div>
+          <h2 class="hero-card-title">كيف يبدو الواجب بعد ترتيبنا؟</h2>
+          <ul class="hero-card-list">
+            <li>
+              <span>✔</span>
+              عنوان واضح، مقدّمة، وترقيم مطابق للبريف.
+            </li>
+            <li>
+              <span>✔</span>
+              فقرات تحليلية، جداول، وصور داعمة عند الحاجة.
+            </li>
+            <li>
+              <span>✔</span>
+              لغة بسيطة، مرتّبة، خالية من الأخطاء قدر الإمكان.
+            </li>
+            <li>
+              <span>✔</span>
+              جاهز للطباعة أو الرفع على منصة المدرسة مباشرة.
+            </li>
+          </ul>
+          <div class="hero-chip-row">
+            <div class="hero-chip">Unit 3</div>
+            <div class="hero-chip">Unit 8</div>
+            <div class="hero-chip">Unit 9</div>
+            <div class="hero-chip">Unit 27</div>
+            <div class="hero-chip">وغيرها…</div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- لماذا نحن -->
+      <section id="why-us">
+        <div class="section-header">
+          <div class="section-kicker">لماذا تختار ابطال الواجبات؟</div>
+          <h2 class="section-title">تركيز على العلامة الكاملة، وليس مجرد الحشو.</h2>
+          <p class="section-subtitle">
+            الفكرة ليست أن نكتب كلامًا كثيرًا فقط، بل أن نغطّي كل نقطة في البريف
+            بأسلوب منظم، واضح، ومقنع للمعلّم، مع مراعاة أمثلة، جداول، ورسومات عندما تكون مطلوبة.
+          </p>
+        </div>
+
+        <div class="cards-grid-3">
+          <article class="card">
+            <div class="card-label">01</div>
+            <h3 class="card-title">فهم عميق لمعايير BTEC</h3>
+            <p class="card-text">
+              نراعي دائمًا الـ P / M / D Criteria ونكتب الحل بناءً عليها، بحيث يكون
+              التقرير موجهًا مباشرة لما يريده التقييم.
+            </p>
+            <ul class="card-list">
+              <li><span>•</span> تحليل دقيق لمحتوى البريف.</li>
+              <li><span>•</span> ربط الحل بالنقاط المطلوبة فقط.</li>
+              <li><span>•</span> إضافة أمثلة عملية وتطبيقية عند الحاجة.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-label">02</div>
+            <h3 class="card-title">أسلوب بشري وطبيعي</h3>
+            <p class="card-text">
+              نبتعد عن الأسلوب الآلي المباشر، ونستخدم لغة طالب مجتهد بأسلوب واقعي
+              يتناسب مع مستوى المرحلة.
+            </p>
+            <ul class="card-list">
+              <li><span>•</span> فقرات مترابطة بدون حشو زائد.</li>
+              <li><span>•</span> عناوين فرعية واضحة ومنظمة.</li>
+              <li><span>•</span> إمكانية تعديل الأسلوب حسب ملاحظات المعلّم.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-label">03</div>
+            <h3 class="card-title">التزام بالوقت والسرّية</h3>
+            <p class="card-text">
+              نتعامل مع وقت التسليم بجدية، ومع بياناتك وسجلاتك بسرّية تامة
+              وبدون مشاركة مع أي طرف آخر.
+            </p>
+            <ul class="card-list">
+              <li><span>•</span> مواعيد تسليم متفق عليها مسبقًا.</li>
+              <li><span>•</span> تحديثات دورية إذا احتجتها.</li>
+              <li><span>•</span> لا نشارك ملفاتك مع أي طالب آخر.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- الخدمات -->
+      <section id="services">
+        <div class="section-header">
+          <div class="section-kicker">ماذا نقدّم؟</div>
+          <h2 class="section-title">خدماتنا في واجبات BTEC.</h2>
+        </div>
+
+        <div class="cards-grid-3">
+          <article class="card">
+            <h3 class="card-title">حل وتقارير كاملة</h3>
+            <p class="card-text">
+              إعداد تقرير كامل من الصفر حسب البريف: مقدمة، محتوى، جداول، صور، وخاتمة.
+            </p>
+            <ul class="card-list">
+              <li><span>•</span> تنسيق Word جاهز للطباعة.</li>
+              <li><span>•</span> عناوين وترويسات مرتبة.</li>
+              <li><span>•</span> إمكانية إضافة مراجع إذا طُلبت.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">عروض PowerPoint</h3>
+            <p class="card-text">
+              تصميم عروض تقديمية احترافية تعتمد على نفس محتوى التقرير مع صور وأيقونات.
+            </p>
+            <ul class="card-list">
+              <li><span>•</span> شرائح منظمة وواضحة.</li>
+              <li><span>•</span> ألوان متناسقة وخطوط مقروءة.</li>
+              <li><span>•</span> مناسبة للشرح في الصف أو أونلاين.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">تعديل وتحسين الواجب</h3>
+            <p class="card-text">
+              إذا كان لديك حل سابق، نعيد ترتيبه، نصححه، ونضيف ما ينقصه للوصول إلى المعايير.
+            </p>
+            <ul class="card-list">
+              <li><span>•</span> مراجعة ملاحظات المعلّم.</li>
+              <li><span>•</span> إعادة صياغة بدون تغيير الفكرة الأساسية.</li>
+              <li><span>•</span> تدعيم بأمثلة أو صور إضافية.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- آلية العمل -->
+      <section id="process">
+        <div class="section-header">
+          <div class="section-kicker">كيف نعمل؟</div>
+          <h2 class="section-title">ثلاث خطوات بسيطة… والباقي علينا.</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-title">إرسال البريف والموعد</div>
+            <p class="step-text">
+              ترسل صورة البريف (Assignment Brief) وموعد التسليم المطلوب، وأي
+              تعليمات خاصة من المعلّم.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-title">الاتفاق على التفاصيل</div>
+            <p class="step-text">
+              نحدّد معك المطلوب بالضبط (Report, PPT, Posters…)، ونوضّح الوقت
+              والتكلفة، ثم نبدأ التنفيذ.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-title">استلام النسخة الجاهزة</div>
+            <p class="step-text">
+              تستلم الحل جاهزًا في ملف Word/PowerPoint، مع إمكانية التعديل
+              إذا طلب المعلّم أي ملاحظات إضافية.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- الضمانات والتقييمات -->
+      <section>
+        <div class="cards-grid-2">
+          <article class="card">
+            <h3 class="card-title">ضماناتنا لك</h3>
+            <p class="card-text">
+              نلتزم بتقديم خدمة عادلة وواضحة، لا نعد بشيء غير واقعي، لكن نعمل
+              بأعلى طاقة ممكنة لنوصلك لأفضل نتيجة.
+            </p>
+            <ul class="card-list">
+              <li><span>•</span> التزام بالتنسيق المطلوب في البريف.</li>
+              <li><span>•</span> عدم استخدام نفس التقرير لطالبين مختلفين.</li>
+              <li><span>•</span> تعديلات مجانية ضمن نفس البريف.</li>
+              <li><span>•</span> وضوح في الوقت والتكلفة من البداية.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">آراء بعض الطلاب</h3>
+            <div class="testimonials">
+              <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                “المعلّم كتب لي بالتعليق: واضح إنك فاهم البريف ومغطي كل النقاط.”
+                <div class="testimonial-name">طالب هندسة - Level 3</div>
+                <div class="testimonial-tag">Unit 27</div>
+              </div>
+              <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                “الـ PPT جاهز بالكامل، ما احتجت أعدّل إلا على كم كلمة وبس.”
+                <div class="testimonial-name">طالبة IT - Level 2</div>
+                <div class="testimonial-tag">Unit 1</div>
+              </div>
+              <div class="testimonial">
+                <div class="testimonial-stars">★★★★☆</div>
+                “كان عندي تأخير من المعلم، عدّلوا التقرير بناءً على الملاحظات بدون زيادة تكلفة.”
+                <div class="testimonial-name">طالب زراعة - Level 3</div>
+                <div class="testimonial-tag">Unit 8</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="section-header">
+          <div class="section-kicker">الأسئلة الشائعة</div>
+          <h2 class="section-title">أهم الأسئلة التي نسمعها من الطلاب.</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">هل تضمنون علامة معيّنة؟</div>
+            <div class="faq-a">
+              لا يمكن لأحد أن يضمن علامة محددة، لأن التقييم النهائي يرجع للمعلّم
+              وسياسة المدرسة، لكن نضمن أن الحل مرتب ومبني على البريف قدر الإمكان،
+              ونقدّم تعديلات إذا طُلبت ملاحظات واضحة.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">هل تُستخدم نفس الملفات لطلاب آخرين؟</div>
+            <div class="faq-a">
+              لا، كل تقرير يُبنى لحالة الطالب والبريف الخاص به، ولا نشارك
+              ملفاتك مع أحد، حفاظًا على السرّية ومنع التشابه.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">كيف يتم الدفع؟</div>
+            <div class="faq-a">
+              يتم الاتفاق على طريقة الدفع حسب البلد والخيارات المتاحة (تحويل
+              بنكي، محفظة إلكترونية،…)، ويتم توضيح كل شيء بوضوح في واتساب قبل البدء.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">متى أطلب المساعدة؟</div>
+            <div class="faq-a">
+              كلما كان الوقت أبكر، كان العمل أريح وأفضل في الجودة. يفضّل إرسال
+              البريف قبل موعد التسليم بعدة أيام، خاصة للواجبات الطويلة.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- التواصل -->
+      <section id="contact">
+        <div class="section-header">
+          <div class="section-kicker">جاهز تبدأ؟</div>
+          <h2 class="section-title">أرسل تفاصيل واجبك الآن.</h2>
+          <p class="section-subtitle">
+            املأ النموذج السريع أو تواصل مباشرة عبر واتساب، وسنرد عليك بأقرب وقت
+            مع توضيح الوقت والتكلفة.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 class="card-title">نموذج الطلب السريع</h3>
+            <form class="contact-form">
+              <div class="field">
+                <label for="name">الاسم الأول</label>
+                <input id="name" type="text" placeholder="مثال: محمد" />
+              </div>
+              <div class="field">
+                <label for="unit">اسم الوحدة / رقم الوحدة</label>
+                <input id="unit" type="text" placeholder="مثال: Unit 3 - Delivery of Engineering Processes" />
+              </div>
+              <div class="field">
+                <label for="deadline">موعد التسليم</label>
+                <input id="deadline" type="date" />
+              </div>
+              <div class="field">
+                <label for="type">نوع المطلوب</label>
+                <select id="type">
+                  <option>تقرير Word</option>
+                  <option>عرض PowerPoint</option>
+                  <option>تقرير + PowerPoint</option>
+                  <option>تعديل واجب موجود</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="details">شرح مختصر عن المطلوب</label>
+                <textarea id="details" placeholder="مثال: مطلوب P1 و P2 و P3 مع جداول وصور حسب البريف."></textarea>
+              </div>
+              <button type="button" class="btn-primary" style="margin-top:0.2rem;">
+                إرسال (تجريبي)
+              </button>
+              <div class="contact-note">
+                هذا النموذج تجريبي في النسخة الحالية من الموقع. نصيحة: التراسل
+                عبر واتساب أسرع وأسهل في تنظيم التفاصيل.
+              </div>
+            </form>
+          </div>
+
+          <div class="contact-highlight">
+            <p>
+              <strong>تفضّل دائماً واتساب للمراسلة الفعلية.</strong><br />
+              اضغط على زر واتساب أسفل الشاشة، وأرسل:
+            </p>
+            <ul style="margin-top:0.5rem; padding-right:1.1rem;">
+              <li>1) صورة البريف كاملة.</li>
+              <li>2) موعد التسليم المطلوب.</li>
+              <li>3) هل تحتاج تقرير فقط أم عرض أيضًا؟</li>
+            </ul>
+            <p style="margin-top:0.6rem;">
+              سنرد عليك برسالة منظمة تتضمن: فهمنا للمطلوب، الوقت، والتكلفة
+              التقريبية، ثم نبدأ بعد موافقتك.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- الفوتر -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> eng.btec - جميع الحقوق محفوظة.</div>
+      <div class="footer-links">
+        <a href="#top">الرجوع للأعلى</a>
+        <span>•</span>
+        <a href="#faq">الأسئلة الشائعة</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- زر واتساب عائم -->
+<a href="https://wa.me/962797376737?text=مرحبًا، أود المساعدة في واجبات BTEC."
+   target="_blank" rel="noopener"
+   class="whatsapp-float">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16.01 3C9.38 3 4 8.16 4 14.78c0 2.58.84 4.97 2.28 6.93L4 29l7.46-2.2A11.9 11.9 0 0 0 16 26.56C22.62 26.56 28 21.4 28 14.78 28.02 8.16 22.64 3 16.01 3Zm6.78 16.64c-.28.8-1.64 1.52-2.27 1.62-.58.1-1.33.14-2.16-.13-.5-.16-1.15-.37-1.98-.73-3.48-1.51-5.74-5.04-5.92-5.27-.17-.23-1.41-1.87-1.41-3.56 0-1.7.9-2.53 1.23-2.88.33-.35.73-.44.97-.44.24 0 .49 0 .7.01.22.01.52-.08.82.62.31.75 1.05 2.6 1.14 2.79.09.19.15.41.03.66-.12.25-.18.41-.36.63-.19.22-.39.49-.56.66-.19.19-.38.4-.17.78.21.38.94 1.55 2.02 2.52 1.39 1.24 2.56 1.63 2.93 1.81.37.18.59.16.81-.1.22-.26.94-1.1 1.19-1.48.25-.38.5-.32.84-.19.35.12 2.2 1.03 2.57 1.22.38.19.63.28.72.44.09.16.09.91-.19 1.71Z"/>
+  </svg>
+</a>
+<div class="whatsapp-tooltip">
+  تواصل مباشر عبر واتساب
+</div>
+
+<script>
+  // سنة الفوتر
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // قائمة الموبايل
+  const menuBtn = document.querySelector('[data-menu-btn]');
+  const navMobile = document.querySelector('[data-nav]');
+
+  if (menuBtn && navMobile) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navMobile.classList.toggle('open');
+    });
+
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        navMobile.classList.remove('open');
+      });
+    });
+  }
+</script>
+</body>
+</html>
